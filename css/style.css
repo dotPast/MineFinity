@@ -1,198 +1,73 @@
-*,
-*::before,
-*::after {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-a {
-    text-decoration: none;
+/* Violet color for light color scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme=light],
+:root:not([data-theme=dark]) {
+  --pico-text-selection-color: rgba(167, 128, 212, 0.25);
+  --pico-primary: #8352c5;
+  --pico-primary-background: #7540bf;
+  --pico-primary-underline: rgba(131, 82, 197, 0.5);
+  --pico-primary-hover: #6935b3;
+  --pico-primary-hover-background: #6935b3;
+  --pico-primary-focus: rgba(167, 128, 212, 0.25);
+  --pico-primary-inverse: #fff;
 }
 
-ul,
-ol,
-li {
-    list-style: none;
+/* Violet color for dark color scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+    --pico-primary: #b290d9;
+    --pico-primary-background: #7540bf;
+    --pico-primary-underline: rgba(178, 144, 217, 0.5);
+    --pico-primary-hover: #c9afe4;
+    --pico-primary-hover-background: #8352c5;
+    --pico-primary-focus: rgba(178, 144, 217, 0.25);
+    --pico-primary-inverse: #fff;
+  }
 }
-img {
-    vertical-align: top;
+
+/* Violet color for dark color scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme=dark] {
+  --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+  --pico-primary: #b290d9;
+  --pico-primary-background: #7540bf;
+  --pico-primary-underline: rgba(178, 144, 217, 0.5);
+  --pico-primary-hover: #c9afe4;
+  --pico-primary-hover-background: #8352c5;
+  --pico-primary-focus: rgba(178, 144, 217, 0.25);
+  --pico-primary-inverse: #fff;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: inherit;
-    font-size: inherit;
-}
-html,
 body {
-    height: 100%;
-    line-height: 1;
-    font-size: 22px;
-    font-family: "PT Sans";
+    padding: 1em;
 }
 
-.wrapper {
-    min-height: 100%;
+dialog {
+  border: none;
 }
 
-
-._container {
-    max-width: 1000px;
-    margin: 0px auto;
-    padding: 50px 20px;
+.non-modal-article {
+  max-width: 600px;
 }
 
-
-.parallax {
-    min-height: 100vh;
+.no-background {
+  background-color: transparent;
 }
 
-
-.parallax__body {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+.center {
+  text-align: center;
 }
 
-
-.parallax__container {
-    text-transform: uppercase;
-    position: relative;
-    z-index: 2;
-
+.background-logo {
+  background-color: #6600B0;
+  border-radius: 50px;
 }
 
-
-
-.parallax__title {
-    font-size: 88px;
+.logo {
+  padding: 7.5%;
 }
 
-
-.parallax__images {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-
-.images-parallax {
-
-}
-
-
-.images-parallax__item {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-
-.images-parallax__bgl1,
-.images-parallax__bgl2 {
-    position: fixed;
-    width: 80%;
-    height: 80%;
-    
-}
-
-.images-parallax__bgm{
-    position: fixed;
-    width: 50%;
-    height: 50%;
-}
-
-
-.images-parallax__bgl1 {
-    background: url('../img/bgl1.png') top / cover no-repeat;
-    z-index: 2;
-}
-
-
-.images-parallax__bgm {
-    background: url('../img/bgm.png') top / cover no-repeat;
-    z-index: 1;
-}
-
-
-.images-parallax__bgl2 {
-    background: url('../img/bgl2.png') top / cover no-repeat;
-    z-index: 3;
-}
-
-
-@media (max-aspect-ratio: 3/2) {
-    .images-parallax__bgl2 {
-        background-position: 20% top;
-    }
-}
-
-
-.content {
-    position: relative;
-    z-index: 2;
-}
-
-
-.content::before {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    transform: translate(0px, -100%);
-    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 5%, #0b1d26 100%);
-}
-
-
-.content__container {
-    
-}
-
-
-.content__title {
-    font-size: 35px;
-    margin: 0px 0px 30px 0px;
-}
-
-
-.content__text {
-    font-size: 16px;
-    line-height: 150%;
-}
-
-
-.content__text p {
-    margin: 0px 0px 30px 0px;
-}
-
-
-@media (max-width: 767px) {
-    .parallax__title{
-        font-size: 50px;
-    }
-    .parallax__label {
-        font-size: 16px;
-        margin: 0px 10px 0px 0px;
-    }
-}
-
-@media (max-width: 479px) {
-    .parallax__title{
-        font-size: 36px;
-    }
-    .parallax__label::before {
-        flex: 0 0 50px;
-        margin: 0px 10px 0px 0px;
-    }
+.secret {
+  opacity: 1%;
 }

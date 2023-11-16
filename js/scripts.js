@@ -1,61 +1,35 @@
 function toggleTheme() {
-    var styleSheet = document.getElementById('styleSheet');
-    if (styleSheet.getAttribute('href') === '/css/color-style-light.css') {
-        styleSheet.href = '/css/color-style-dark.css';
+    var mainHtml = document.getElementsByTagName('html')[0];
+    var button = document.getElementById('themeButton')
+    if (mainHtml.getAttribute('data-theme') === 'light') {
+        mainHtml.setAttribute('data-theme', 'dark');
+        button.src = "/assets/moon.svg"
     } else {
-        styleSheet.href = '/css/color-style-light.css';
+        mainHtml.setAttribute('data-theme', 'light');
+        button.src = '/assets/sun.svg'
     }
 }
 
-"use strict"
-window.onload = function() {
-    const parallax = document.querySelector('.parallax');
+const openServerDialogButton = document.getElementById('openServerDialog');
+const closeServerDialogButton = document.getElementById('closeServerDialog');
+const altCloseServerDialogButton = document.getElementById('altCloseServerDialog');
+const copyIPServerDialogButton = document.getElementById('copyIPServerDialog');
+const serverDialog = document.getElementById('serverDialog');
 
-    if(parallax){
-        const content = document.querySelector('.parallax__container');
-        const bgl1 = document.querySelector('.images-parallax__bgl1');
-        const bgm = document.querySelector('.images-parallax__bgm');
-        const bgl2 = document.querySelector('.images-parallax__bgl2');
+openServerDialogButton.addEventListener("click", () => {
+    serverDialog.showModal();
+    copyIPServerDialogButton.innerText = "Скопировать IP"
+})
 
-        //Коэффициенты
-        const forbgl1 = 10;
-        const forbgm = 40;
-        const forbgl2 = 20;
+closeServerDialogButton.addEventListener("click", () => {
+    serverDialog.close();
+})
 
-        //Скорость анимации
-        const speed = 0.05;
+altCloseServerDialogButton.addEventListener("click", () => {
+    serverDialog.close();
+})
 
-        //Объявление переменных
-        let positionX = 0, positionY = 0;
-        let coordXprocent = 0, coordYprocent = 0;
-
-        function setMouseParallaxStyle() {
-            const distX = coordXprocent - positionX;
-            const distY = coordYprocent - positionY;
-
-            positionX = positionX + (distX * speed);
-            positionY = positionY + (distY * speed);
-
-            //Передаём стили
-            bgl1.style.cssText = `transform: translate(${positionX / forbgl1}%, ${positionY / forbgl1}%);`;
-            bgm.style.cssText = `transform: translate(${positionX / forbgm}%, ${positionY / forbgm}%);`;
-            bgl2.style.cssText = `transform: translate(${positionX / forbgl2}%, ${positionY / forbgl2}%);`;
-            
-            requestAnimationFrame(setMouseParallaxStyle);
-        }
-        setMouseParallaxStyle();
-
-        parallax.addEventListener("mousemove", function(e) {
-            //Получение ширины и высоты блока
-            const parallaxWidth = parallax.offsetWidth;
-            const parallaxHeight = parallax.offsetHeight;
-
-            //Ноль по середине
-            const coordX = e.pageX - parallaxWidth / 2;
-            const coordY = e.pageY - parallaxHeight / 2;
-
-            coordXprocent = coordX / parallaxWidth * 100;
-            coordYprocent = coordY / parallaxHeight * 100;
-        });
-    }
-}
+copyIPServerDialogButton.addEventListener("click", () => {
+    navigator.clipboard.writeText('Placeholder:IP');
+    copyIPServerDialogButton.innerText = "Скопировано!";
+})

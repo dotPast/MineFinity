@@ -1,51 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic" rel="stylesheet">
-    <link rel="stylesheet" id="styleSheet" href="/css/color-style-light.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="/css/style.css">
+  <title>MineFinity Dotified</title>
 </head>
-<body>
 
-<a id="themeButton" onclick="toggleTheme()">Переключить тему</a>
-<div class="wrapper">
-    <section class="parallax">
-        <div class="parallax__body">
-            <div class="parallax__container _container">
-                <h1 class="parallax__title">Test text</h1>
-            </div>
-            <div class="parallax__images images-parallax">
-                <div class="images-parallax__item">
-                    <div class="images-parallax__bgl1"></div>
-                </div>
-                <div class="images-parallax__item">
-                    <div class="images-parallax__bgm"></div>
-                </div>
-                <div class="images-parallax__item">
-                    <div class="images-parallax__bgl2"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="content">
-        <div class="content_container _container">
-            <h2 class="content__title">Остальной контент сайта</h2>
-            <div class="content__text">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti quis illum vel laudantium facere! Numquam iusto at veniam ratione. Vero laudantium consequuntur blanditiis iusto omnis! Ipsam facilis libero doloremque distinctio!</p>
-            </div>
-        </div>
-    </section>
-<script src="/js/scripts.js"></script>
-</body>
+<dialog id="serverDialog">
+  <article id="serverDialogArticle">
+    <header>
+      <Link to="/" aria-label="Close" class="close" id="closeServerDialog" />
+      <p>
+        <strong>Как играть</strong>
+      </p>
+    </header>
+    
+    <p>
+      Во первых напишите заявку в <a href="https://discord.gg/3Fn6dCKbdA">Discord сервере</a>. После этого:<br>
+
+      <ol>
+        <li>
+          Скопируйте IP адрес и вставьте его в поле "Адрес сервера" в меню добваления сервера.<br>
+        </li>
+        <li>          
+          Включите ресурспак установив "Наборы ресурсов" на "Включено", затем нажмите "Готово".
+        </li>
+      </ol>
+    </p>
+    <img class="center" src="/assets/server-howtojoin-placeholder.png" alt="Как зайти">
+    <footer>
+      <button id="copyIPServerDialog">Скопировать IP</button>
+      <button id="altCloseServerDialog">Закрыть</button>
+    </footer>
+  </article>
+</dialog>
+
+<nav>
+  <ul>
+    <li>
+      <a href="/"><img src="/assets/logo.png" alt="MineFinity Logo" width="64px"></a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <button class="center" onclick="toggleTheme()"><img id="themeButton" src="/assets/moon.svg" alt="Theme Switcher Button"></button>
+    </li>
+  </ul>
+</nav>
+
+<body>
+  <main class="container">
+    <div class="center background-logo">
+      <img class="logo" src="/assets/logo-full.png" alt="MineFinity Logo">
+    </div>
+    <h4 class="center" style="padding-top: 1em;">ЛЕГЕНДАРНЫЙ КОЛЛАБ - эээээээммм... (кто сказал это?)</h1>
+    <div class="center">  
+      <button id="openServerDialog">Скоро!</button>
+    </div>
+    <div class="grid" style="padding-top: 1em;">
+      <article class="center">
+        <h1>О нас</h1>
+        MineFinity это объединение коммюнити Dikoland и MineReam. Это ванильный сервер с элементами ролеплея.
+      </article>
+    </div>
+    
+    <h1 class="center">Администрация</h1>
+    <div class="grid" style="padding-top: 1em;">  
+      <article class="center">
+        <h1>VladVK и DikYT</h1>
+        Создатели и владельцы. Они оба имели свои сервера и решили объединить их.
+      </article>
+      <article class="center">
+        <h1>dotPast</h1>
+        Разработчик сервера. Разрабатывал Dikoland V4 и создавал этот сайт. <br>
+        <a href="https://www.twitch.tv/crimrosetv" class="secret">https://twitch.tv/crimrosetv</a>
+      </article>
+    </div>
+    <div class="grid">  
+      <article class="center">
+        <h1>DikYT</h1>
+        MineFinity это объединение коммюнити Dikoland и MineReam. Это ванильный сервер с элементами ролеплея.
+      </article>
+      <article class="center">
+        <h1>DikYT</h1>
+        MineFinity это объединение коммюнити Dikoland и MineReam. Это ванильный сервер с элементами ролеплея.
+      </article>
+      <article class="center">
+        <h1>DikYT</h1>
+        MineFinity это объединение коммюнити Dikoland и MineReam. Это ванильный сервер с элементами ролеплея.
+      </article>
+    </div>
+    <div class="grid">  
+      <article class="center">
+        <h1>DikYT</h1>
+        MineFinity это объединение коммюнити Dikoland и MineReam. Это ванильный сервер с элементами ролеплея.
+      </article>
+      <article class="center">
+        <h1>DikYT</h1>
+        MineFinity это объединение коммюнити Dikoland и MineReam. Это ванильный сервер с элементами ролеплея.
+      </article>
+      <article class="center">
+        <h1>DikYT</h1>
+        MineFinity это объединение коммюнити Dikoland и MineReam. Это ванильный сервер с элементами ролеплея.
+      </article>
+    </div>
+  </main>
+
+  <script src="/js/scripts.js"></script>
+  </body>
 </html>
