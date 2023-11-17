@@ -40,7 +40,16 @@
   --pico-primary-inverse: #fff;
 }
 body {
-    padding: 1em;
+  padding: 1em;
+  background: linear-gradient(#6600B0, transparent);
+  background-size: 100vw 75vh;
+  background-repeat: no-repeat;
+}
+
+body[current-theme=light] {
+  background: linear-gradient(#ad71d8, transparent);
+  background-size: 100vw 75vh;
+  background-repeat: no-repeat;
 }
 
 dialog {
