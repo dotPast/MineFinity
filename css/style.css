@@ -56,6 +56,31 @@ dialog {
   border: none;
 }
 
+footer {
+  text-align: center;
+  opacity: 25%;
+}
+
+img {
+  border-radius: 15px;
+}
+
+.no-img-rounding {
+  border-radius: 0px;
+}
+
+.article-block {
+  overflow: auto;
+}
+
+.about-img {
+  float: right;
+}
+
+.about-img img {
+  display: block;
+}
+
 .non-modal-article {
   max-width: 600px;
 }
