@@ -33,3 +33,13 @@ copyIPServerDialogButton.addEventListener("click", () => {
   navigator.clipboard.writeText('Placeholder:IP');
   copyIPServerDialogButton.innerText = "Скопировано!";
 })
+
+function openWikiPages() {
+  const dialog = document.getElementById('wikiPages');
+  dialog.showModal();
+}
+
+function closeWikiPages() {
+  const dialog = document.getElementById('wikiPages');
+  dialog.close();
+}

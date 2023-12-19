@@ -1,5 +1,5 @@
-/* Violet color for light color scheme (Default) */
-/* Can be forced with data-theme="light" */
+/* Can be forced with data-theme="light" 
+* and for some fucking reason this breaks lol thx nerdfonts*/
 [data-theme=light],
 :root:not([data-theme=dark]) {
   --pico-text-selection-color: rgba(167, 128, 212, 0.25);
@@ -39,6 +39,7 @@
   --pico-primary-focus: rgba(178, 144, 217, 0.25);
   --pico-primary-inverse: #fff;
 }
+
 body {
   padding: 1em;
   background: linear-gradient(#6600B0, transparent);
@@ -54,6 +55,7 @@ body[current-theme=light] {
 
 dialog {
   border: none;
+  transition: 0.5s;
 }
 
 footer {
@@ -63,6 +65,11 @@ footer {
 
 img {
   border-radius: 15px;
+}
+
+.wiki-button {
+  width: 33vw;
+  text-align: left;
 }
 
 .no-img-rounding {
@@ -104,4 +111,43 @@ img {
 
 .secret {
   opacity: 1%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
