@@ -45,12 +45,14 @@ body {
   background: linear-gradient(#6600B0, transparent);
   background-size: 100vw 75vh;
   background-repeat: no-repeat;
+  font-family: 'Fira Code', monospace;
 }
 
 body[current-theme=light] {
   background: linear-gradient(#ad71d8, transparent);
   background-size: 100vw 75vh;
   background-repeat: no-repeat;
+  font-family: 'Fira Code', monospace;
 }
 
 dialog {
