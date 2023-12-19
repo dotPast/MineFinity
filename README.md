@@ -1,6 +1,3 @@
-# MineFinityWeb
-> [!NOTE]
-> This branch is developed by dotPast independently from main
+# MineFinityWeb-dotified-og
 
-This is the MineFinity website created by the developers project
-
+This is the repo for an unreleased website for the MineFinity server.
