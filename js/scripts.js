@@ -3,10 +3,10 @@ function toggleTheme() {
   var button = document.getElementById('themeButton')
   if (mainHtml.getAttribute('data-theme') === 'light') {
     mainHtml.setAttribute('data-theme', 'dark');
-    button.src = "/assets/moon.svg"
+    button.src = "./assets/moon.svg"
   } else {
     mainHtml.setAttribute('data-theme', 'light');
-    button.src = '/assets/sun.svg'
+    button.src = './assets/sun.svg'
   }
 }
 
